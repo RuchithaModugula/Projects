@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nested  decision</title>
+        <script>
+            var cardDetails = {
+                cardNumber : 1234112233445566,
+                cardCvv    : 200,
+                cardExpiry : 2027
+            }
+            function verifyCardNumber(){
+                var cardnumber = document.getElementById("txtCardNumber").value;
+
+                //simple decision
+                if(cardnumber==cardDetails.cardNumber){
+                    document.getElementById("txtCardCvv").disabled=false;
+                }
+                else{
+                    document.getElementById("txtCardCvv").disabled=true;
+                }
+            }
+            function verifyCardCvv(){
+                var cardcvv = document.getElementById("txtCardCvv").value;
+
+                //simple decision 
+
+                if(cardcvv==cardDetails.cardCvv){
+                    document.getElementById("lstCardExpiry").disabled=false;
+                }
+                else{
+                    document.getElementById("lstCardExpiry").disabled=true;  
+                }
+            }
+            function verifyCardExpiry(){
+                var cardexpiry = document.getElementById("lstCardExpiry").value;
+
+                //simple decision
+
+                if(cardexpiry==cardDetails.cardExpiry){
+                     document.getElementById("pay").disabled = false;
+                }
+                else{
+                    document.getElementById("pay").disabled = true;
+                }
+            }
+
+            function payClick(){
+                var cardnumber = document.getElementById("txtCardNumber").value;
+                var cardcvv = document.getElementById("txtCardCvv").value;
+                var cardexpiry = document.getElementById("lstCardExpiry").value;
+                var msg = document.getElementById("msg");
+                
+                //Nested Decision
+
+                if(cardnumber==cardDetails.cardNumber){
+                     if(cardcvv==cardDetails.cardCvv){
+                         if(cardexpiry==cardDetails.cardExpiry){
+                              document.write("Payment Success")
+                         }
+                         else{
+                             msg.innerHTML = "Invalid CardExpiry"
+                         }
+                     }
+                     else{
+                        msg.innerHTML = "Invalid CardCvv";
+                     }
+                }
+                else{
+                    msg.innerHTML = "Invalid CardNumber"; 
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Card Payment</legend>~
+            <dl>
+                <dt>CardNumber</dt>
+                <dd>
+                    <input type="text" id="txtCardNumber" onkeyup="verifyCardNumber()">
+                </dd>
+                <dt>CardCvv</dt>
+                <dd>
+                    <input type="text" id="txtCardCvv" disabled="disabled" onkeyup="verifyCardCvv()">
+                </dd>
+                <dt>CardExpiry</dt>
+                <dd>
+                    <select id="lstCardExpiry" disabled="disabled" onchange="verifyCardExpiry()">
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                    </select>
+                </dd>
+            </dl>
+            <button type="button" disabled="disabled" id="pay" onclick="payClick()">Pay</button>
+        </fieldset>
+        <h1 id="msg"></h1>
+    </body>
+</html>
