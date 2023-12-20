@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic icon</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function validbrowser(){
+            var web=document.getElementById("web").value;
+            var icon=document.getElementById("icon");
+            if(web.endsWith("345")){
+                icon.className="bi bi-check2-circle  text-success";
+            }
+            else{
+                icon.className="bi bi-x-circle input-group-text text-danger";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="input-group m-4 w-75">
+        <label class="input-group-text">validbrowser</label>
+        <input type="text" class="form-control" id="web" onkeyup="validbrowser()">
+        <span class="input-group-text" id="icon">
+
+        </span>
+    </div>
+</body>
+</html>

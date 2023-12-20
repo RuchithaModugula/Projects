@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online food</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        function OrderClick(){
+         document.getElementById("lblName").innerHTML =   document.getElementById("txtName").value;
+         document.getElementById("lblMobile").innerHTML =   document.getElementById("txtMobile").value;
+
+         var mealName = "";
+         var mealCost = 0;
+         var adonName = "";
+         var adonCost = 0;
+
+         var chsha = document.getElementById("csha");
+         var chshasalad = document.getElementById("cshasalad");
+         var chfry = document.getElementById("cshafry");
+         var vshapaner= document.getElementById("vshapa");
+         var vshafry = document.getElementById("vshafry");
+         var vshasa = document.getElementById("vshasalad");
+
+         var optAvacado = document.getElementById("optavacado");
+         var optpanner = document.getElementById("optpanner");
+         var optWings = document.getElementById("optwings");
+         var optchicken = document.getElementById("optchicken");
+
+         if(chsha.checked){
+             mealName = chsha.value;
+             mealCost = 210;
+         }
+
+         if(chshasalad.checked){
+            mealName = chshasalad.value;
+             mealCost = 230;
+         }
+         if(chfry.checked){
+            mealName = chfry.value;
+             mealCost = 250;
+         }
+         if(vshapaner.checked){
+            mealName = vshapaner.value;
+             mealCost = 180;
+         }
+         if(vshasa.checked){
+            mealName = vshasa.value;
+             mealCost = 180;
+         }
+         if(vshafry.checked){
+            mealName = vshafry.value;
+             mealCost = 180;
+         }
+
+         if(optWings.checked){
+            adonName += optWings.value + "<br>";
+            adonCost = 100;
+            mealCost = mealCost + adonCost;
+         }
+
+         if(optchicken.checked){
+            adonName += optchicken.value + "<br>";
+            adonCost = 150;
+            mealCost = mealCost + adonCost;
+         }
+         
+         if(optAvacado.checked){
+            adonName += optAvacado.value + "<br>";
+            adonCost = 80;
+            mealCost = mealCost + adonCost;
+         }
+         
+         if(optpanner.checked){
+            adonName += optpanner.value + "<br>";
+            adonCost = 50;
+            mealCost = mealCost + adonCost;
+         }
+
+
+         document.getElementById("lblMeal").innerHTML = mealName;
+         document.getElementById("lblAdon").innerHTML = adonName;
+         document.getElementById("lblAmount").innerHTML = "&#8377;" + mealCost;
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../asserts/Food-Web-Banner-13.jpg" class="w-100" height="300">
+    </header>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-hearder d-grid">
+                <button type="button" class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#customer">customer info</button>
+            </div>
+        </div>
+        <div class="collapse collapse-accordion" id="customer">
+            <div class="accordion-body">
+                <label>customer name</label>
+                <input type="text" class="form-control" id="txtName"> <br>
+                <label>mobilenumber</label>
+                <input type="tel" class="form-control" id="txtMobile">
+            </div>
+        </div>
+
+    </div>
+        <div class="accordion">
+            <div class=accordion-item>
+                <div class="accordion-hearder d-grid">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#meal1">meal</button>
+                </div>
+                <div class="accordion-body collapse collapse-accordion" id="meal1" >
+                    <div class="row col-12">
+                        <div class="card w-25 m-4">
+                            <div class="card-header">
+                                <h1 class="card-title">
+                                    chicken shawarma
+                                </h1>
+                            </div>
+                            <div class="card-body">
+                                <img src="../asserts/chickensha.png" class="w-100">
+                            </div>
+                            <div class="card-footer">
+                                <input type="radio" class="form-check-input" id="csha" name="chicken" value="chicken shawarma">&#8377;210/-
+                            </div>
+                        </div>
+                        <div class="card w-25 m-4">
+                            <div class="card-header">
+                                <h1 class="card-title">
+                                    chicken shawarma with salad
+                                </h1>
+                            </div>
+                            <div class="card-body">
+                                <img src="../asserts/chickensha1.jpg" class="w-100">
+                            </div>
+                            <div class="card-footer">
+                                <input type="radio" class="form-check-input" name="chicken" id="cshasalad" value="chickenshawarmasalad">&#8377;230/-
+                            </div>
+                        </div>
+                        <div class="card w-25 m-4">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h1 class="card-text">chickenshawrma fried</h1>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <img src="../asserts/chickensha2.jpg" class="w-100 center">
+                            </div>
+                            <div class="card-footer">
+                                <input type="radio" class="form-check-input" name="chicken" id="cshafry" value="chicken shawarma fried">&#8377;250/-
+                            </div>
+                        </div>
+                         <div class="card w-25 m-4">
+                            <div class="card-header">
+                                    <div class="card-title">
+                                        <h1 class="card-text">vegitarian shawrma with panner</h1>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../asserts/vegsha1.jpg" class="w-100">
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" class="form-check-input" name="chicken" id="vshapa" value="vegitarian shawrma with panner">&#8377;180/-
+                                </div>
+                         </div>
+                            <div class="card w-25 m-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h1 class="card-text">vegitarian shawrma fried</h1>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../asserts/vegsha2.jpg" class="w-100">
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" class="form-check-input" name="chicken" id="vshafry" value="vegitarian shawrma fried">&#8377;180/-
+                                </div>
+                            </div>
+                            <div class="card w-25 m-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        <h1 class="card-text">vegitarian shawrma with salad</h1>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../asserts/vegsha3.png" class="w-100">
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" class="form-check-input" id="vshasalad" name="chicken" value="vegitarian shawrma with salad">&#8377;180/-
+                                </div>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header d-grid">
+              <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#adon">
+                  Choose AD-ON's
+              </button>  
+            </h2>
+            <div id="adon" class="collapse accordion-collapse" data-bs-parent="#kfcform">
+               <div class="accordion-body">
+                  <div class="row">
+                    <div class="col-3 text-center">
+                        <div class="card">
+                          <div class="card-body">
+                            <img src="../asserts/avacadoo.jpg" width="200" height="200">
+                          </div>
+                          <div class="card-footer">
+                            <input type="checkbox" id="optavacado" value="avacado"> Avacado toast &#8377; 80/-
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body">
+                              <img src="../asserts/pannertika.jpg" width="200" height="200">
+                            </div>
+                            <div class="card-footer">
+                              <input type="checkbox" id="optpanner" value="Panner tikka"> Panner Tikka &#8377; 50/-
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body">
+                              <img src="../asserts/chicken wing with dipping.jpg" width="200" height="200">
+                            </div>
+                            <div class="card-footer">
+                              <input type="checkbox" id="optwings" value="Wings with dipping"> Wings with dipping &#8377; 150/-
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="card">
+                            <div class="card-body">
+                              <img src="../asserts/chicken wings.jpg" width="200" height="200">
+                            </div>
+                            <div class="card-footer">
+                              <input type="checkbox" id="optchicken" value="Chicken Wings"> Chicken Wings &#8377; 100/-
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+       <div class="d-grid">
+        <button onclick="OrderClick()" class="btn btn-light" data-bs-target="#summary" data-bs-toggle="modal">Place Order</button>
+                <div class="modal" id="summary">
+                    <div class="modal-dialog">
+                        <div class="modal-content"> 
+                            <div class="modal-header">
+                                <h2>Bill Summary</h2>
+                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>Customer Name</th>
+                                            <td id="lblName"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile</th>
+                                            <td id="lblMobile"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Selected Meal</th>
+                                            <td id="lblMeal"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Selected AD-ON's</th>
+                                            <td id="lblAdon"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bill Amount</th>
+                                            <td id="lblAmount"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+       </div>
+       
+
+
+</body>
+</html>

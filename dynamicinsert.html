@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img insertion dynamically</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+      function cardtype(){
+        var cardnumber=document.getElementById("valid").value;
+        var pic=document.getElementById("pic");
+        if(cardnumber.startsWith("123")){
+            pic.src="../asserts/MasterCard_logo.png";
+        }
+        else{
+            pic.src="../asserts/visa-logo-png-2020.png";
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="input-group m-4 w-75">
+        <label class="input-group-text">cardimages</label> 
+        <input type="text" class="form-control" id="valid" onkeyup="cardtype()">
+        <span class="input-group-text" >
+            <img  width="100" height="40" id="pic">
+        </span>
+    </div>
+</body>
+</html>
