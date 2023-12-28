@@ -1,0 +1,78 @@
+body{
+    color: blue;
+    background-color: antiquewhite;
+    text-align: center;
+    background-image: url("../asserts/background.jpg");
+    background-repeat: no-repeat;
+    border: 1px solid red;
+    margin: 20px;
+    padding: 20px;
+}
+ul{
+    list-style: none;
+}
+.effects{
+    position: relative;
+    justify-content: center;
+    align-content: center;
+
+}.onimage{
+    position: absolute;
+    left:30%;
+    top: 10px;
+   display: flex;
+}
+a{
+    text-decoration: none;
+    float: left;
+    border:2px solid black;
+    height: 20px;
+    width:100px;
+    text-align: center;
+
+   
+}
+#special{
+    display: inline;
+    list-style: none;
+    text-align: center;
+}
+#order{
+    list-style: none;
+}
+#products1{
+    list-style: none;
+    background: url("../asserts/panner.jpg") no-repeat;
+    border: 1px solid;
+    width: 100px;;
+    height: 126px;
+    margin: 10px;
+}
+#products2{
+    list-style: none;
+    background: url("../asserts/piza.jpg") no-repeat;
+    border:1px solid;
+    width: 100px;
+    height: 126px;
+    margin: 10px;
+}
+#products3{
+    list-style: none;
+    background: url("../asserts/prons.jpg") no-repeat;
+    border: 1px solid;
+    width:100px;
+    height: 126px;
+    margin: 10px;
+}
+#relate{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid;
+    align-items: center;
+    justify-content: center;
+
+}
+button:hover{
+    color: rgb(58, 153, 51);
+}
